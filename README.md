@@ -1,13 +1,13 @@
 # Check-IP
-Check the public ip address of the crawler or other Elastic Cloud based connector. 
+Check the public ip address of the crawler or other Elastic Cloud based [connectors](https://www.elastic.co/guide/en/enterprise-search/current/build-connector.html). 
 
 ## Add ingest pipeline
-In Kibana's console:
+In Kibana's [console](https://ipinfo.info/html/my_ip_address.php):
 
 ```
 PUT /_ingest/pipeline/ipinfo
 {
-  "description": "Add a ip_address field from https://ipinfo.info/html/my_ip_address.php",
+  "description": "Add a ip_address field to document when crawling https://ipinfo.info/html/my_ip_address.php",
   "processors": [
     {
       "grok": {
@@ -22,9 +22,7 @@ PUT /_ingest/pipeline/ipinfo
     ]
 }
 ```
-
-
-## Configure Email or other action to take when IP changes.
+## [Configure Email](https://www.elastic.co/guide/en/elasticsearch/reference/current/actions-email.html#configuring-email)  or other [actions](https://www.elastic.co/guide/en/elasticsearch/reference/current/actions.html) to take when IP changes.
 
 ## Setup web crawler
 
