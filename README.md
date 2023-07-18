@@ -1,4 +1,4 @@
-# check-ip
+# Check-IP
 Check the public ip address of the crawler or other Elastic Cloud based connector. 
 
 ## Add ingest pipeline
@@ -7,7 +7,7 @@ In Kibana's console:
 ```
 PUT /_ingest/pipeline/ipinfo
 {
-  "description": "remove text from https://ipinfo.info/html/my_ip_address.php",
+  "description": "Add a ip_address field from https://ipinfo.info/html/my_ip_address.php",
   "processors": [
     {
       "grok": {
