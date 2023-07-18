@@ -1,23 +1,31 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Get IP Address</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <title>Your IP Address</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #ip {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+    <div id="ip"></div>
 
-
-<h1>Test <span class="ipaddress"></span></h1>
-
-
-<script type="text/javascript">
-    $.getJSON("http://jsonip.com", function (data) {
-      console.log(data.ip);
-      $(".ipaddress").text(data.ip);
-    });
-</script>
-
-
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(results => results.json())
+            .then(data => {
+                document.getElementById('ip').innerHTML = "Your IP Address is: " + data.ip;
+            });
+    </script>
 </body>
 </html>
-~
+
