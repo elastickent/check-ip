@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <title>Get IP Address</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<h1><span class="ipaddress"></span></h1>
+
+
+<script type="text/javascript">
+    $.getJSON("http://jsonip.com", function (data) {
+      console.log(data.ip);
+      $(".ipaddress").text(data.ip);
+    });
+</script>
+
+
+</body>
+</html>
+~
